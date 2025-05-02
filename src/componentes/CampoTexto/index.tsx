@@ -1,10 +1,9 @@
 import "./CampoTexto.css";
-import React from "react";
 
 interface CampoTextoProps {
   valor: string;
   placeholder: string;
-  obrigatorio: boolean;
+  obrigatorio?: boolean;
   label: string;
   aoAlterado: (valor: string) => void;
 }
@@ -14,7 +13,7 @@ const CampoTexto = ({
   aoAlterado,
   label,
   valor,
-  obrigatorio,
+  obrigatorio = false,
 }: CampoTextoProps) => {
   const placeholderModificada = `${placeholder}...`;
 
