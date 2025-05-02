@@ -1,7 +1,7 @@
 import "./Colaborador.css";
 import React from "react";
 
-interface ColaboradorProps {
+export interface ColaboradorProps {
   nome: string;
   imagem: string;
   cargo: string;
