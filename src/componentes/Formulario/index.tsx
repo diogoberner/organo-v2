@@ -15,6 +15,7 @@ const Formulario = ({ aoColaboradorCadastrado, times }: FormularioProps) => {
   const [cargo, setCargo] = useState("");
   const [imagem, setImagem] = useState("");
   const [time, setTime] = useState("");
+  const [data, setData] = useState("");
 
   const aoSalvar = (evento: React.FormEvent<HTMLFormElement>) => {
     evento.preventDefault();
@@ -23,11 +24,13 @@ const Formulario = ({ aoColaboradorCadastrado, times }: FormularioProps) => {
       cargo,
       imagem,
       time,
+      data,
     });
     setNome("");
     setCargo("");
     setImagem("");
     setTime("");
+    setData("");
   };
 
   return (
@@ -60,6 +63,13 @@ const Formulario = ({ aoColaboradorCadastrado, times }: FormularioProps) => {
           itens={times}
           valor={time}
           aoAlterado={(valor) => setTime(valor)}
+        />
+        <CampoTexto
+          label="Data da entrada no time"
+          placeholder=""
+          valor={data}
+          aoAlterado={(valor) => setData(valor)}
+          tipo="date"
         />
         <Botao>Criar Card</Botao>
       </form>
